@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel
 import com.vinzaceto.mvvmtest.injection.component.DaggerViewModelInjector
 import com.vinzaceto.mvvmtest.injection.component.ViewModelInjector
 import com.vinzaceto.mvvmtest.injection.module.NetworkModule
-import com.vinzaceto.mvvmtest.ui.PostListViewModel
+import com.vinzaceto.mvvmtest.ui.post.PostListViewModel
 
 /**
  * NTT Data Italia S.p.A.

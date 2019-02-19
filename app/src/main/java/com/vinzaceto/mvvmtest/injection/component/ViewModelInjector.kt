@@ -1,7 +1,7 @@
 package com.vinzaceto.mvvmtest.injection.component
 
 import com.vinzaceto.mvvmtest.injection.module.NetworkModule
-import com.vinzaceto.mvvmtest.ui.PostListViewModel
+import com.vinzaceto.mvvmtest.ui.post.PostListViewModel
 import dagger.Component
 import javax.inject.Singleton
 

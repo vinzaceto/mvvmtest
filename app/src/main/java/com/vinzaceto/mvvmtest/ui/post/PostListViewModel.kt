@@ -1,5 +1,7 @@
-package com.vinzaceto.mvvmtest.ui
+package com.vinzaceto.mvvmtest.ui.post
 
+import android.arch.lifecycle.MutableLiveData
+import android.view.View
 import com.vinzaceto.mvvmtest.base.BaseViewModel
 import com.vinzaceto.mvvmtest.network.PostApi
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -21,6 +23,8 @@ class PostListViewModel: BaseViewModel() {
 
     private lateinit var subscription: Disposable
 
+    val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
+
     init{
         loadPosts()
     }
@@ -38,11 +42,11 @@ class PostListViewModel: BaseViewModel() {
     }
 
     private fun onRetrievePostListStart(){
-
+        loadingVisibility.value = View.VISIBLE
     }
 
     private fun onRetrivePostListFinish(){
-
+        loadingVisibility.value = View.GONE
     }
 
     private fun onRetrivePostListSuccess(){
@@ -51,5 +55,10 @@ class PostListViewModel: BaseViewModel() {
 
     private fun onRetreivePostListError(){
 
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        subscription.dispose()
     }
 }
